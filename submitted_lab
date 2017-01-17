@@ -1,0 +1,43 @@
+ Scanner scnr = new Scanner(System.in); // Input stream for standard input
+      Scanner inSS = null;                   // Input string stream
+      String lineString = "";                // Holds line of text
+      boolean inputDone = false;             // Flag to indicate next iteration
+
+      
+
+      // Grab data as long as "q" is not entered
+      while (!inputDone) {
+         // Prompt user for input
+         System.out.println("Enter input string: ");
+         
+         // Entire line into lineString
+         lineString = scnr.nextLine();
+
+         if (lineString.equals("q")) {
+            return;
+         }
+         
+         if (lineString.isEmpty() || !lineString.contains(",")) {
+            System.out.println("Error: No comma in string");
+         } else {
+            char[] charSeq = lineString.toCharArray();
+            String[] words = new String[] { "First word: ", "Second word: " };
+            int wordIndex = 0;
+            for (int i = 0; i < charSeq.length; i++) {
+               if (charSeq[i] == ',') {
+                  wordIndex++;
+               } else if (charSeq[i] == 'q') {
+                  inputDone = true;
+                  break;
+               } else if (charSeq[i] != ' ') {
+                  words[wordIndex] += charSeq[i];
+               }
+            }
+   
+            for (String word : words) {
+               System.out.println(word);
+            }
+            System.out.println();
+            System.out.println();
+         }
+      }

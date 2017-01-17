@@ -1,0 +1,8 @@
+net\massie\zooauth\Authenticator.class
+net\massie\zooauth\Main.class
+net\massie\zooauth\roles\IRole.class
+net\massie\zooauth\Authenticator$UserData.class
+net\massie\zooauth\roles\AbstractRole.class
+net\massie\zooauth\roles\SysAdmin.class
+net\massie\zooauth\roles\Veterinarian.class
+net\massie\zooauth\roles\Zookeeper.class
